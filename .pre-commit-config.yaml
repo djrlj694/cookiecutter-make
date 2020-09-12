@@ -57,3 +57,7 @@ repos:
     rev: v0.782
     hooks:
     - id: mypy
+  - repo: https://github.com/Lucas-C/pre-commit-hooks-go
+    rev: v1.0.1
+    hooks:
+    - id: checkmake
