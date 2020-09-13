@@ -37,7 +37,7 @@ all: help
 clean: clean-github
 
 ## init: Completes all initial repo setup activities.
-init: init-github
+init: init-github init-git-flow
 
 
 # =========================================================================== #
@@ -47,6 +47,7 @@ init: init-github
 include $(MAKE_DIR)/features/formatting.mk
 
 include $(MAKE_DIR)/features/debugging.mk
+include $(MAKE_DIR)/features/downloading.mk
 include $(MAKE_DIR)/features/helping.mk
 
 
@@ -54,4 +55,5 @@ include $(MAKE_DIR)/features/helping.mk
 # PLATFORM DEPENDENCIES
 # ============================================================================ #
 
+include $(MAKE_DIR)/platforms/Git.mk
 include $(MAKE_DIR)/platforms/GitHub.mk
