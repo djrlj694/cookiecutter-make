@@ -36,6 +36,7 @@ The subsections that follow focus on 2 makefile library groups: [*feature librar
 | File | Intended Usage |
 | ---- | ----------- |
 | [debugging.mk](features/debugging.mk) | Debugging makefile projects. |
+| [downloading.mk](features/downloading.mk) | Downloading files. |
 | [formatting.mk](features/formatting.mk) | Formatting standard output (STDOUT). |
 | [helping.mk](features/helping.mk) | Generating and displaying a makefile project's online help. |
 
@@ -43,6 +44,7 @@ The subsections that follow focus on 2 makefile library groups: [*feature librar
 
 | File | Intended Usage |
 | ---- | ----------- |
+| [Git.mk](platforms/Git.mk) | Managing [Git](https://git-scm.com) repositories and source control in software projects. |
 | [GitHub.mk](platforms/GitHub.mk) | Managing [GitHub](https://github.com) repositories. |
 
 ## Conventions
