@@ -20,7 +20,7 @@ MAKEFILE = $(firstword $(MAKEFILE_LIST))
 MAKEFILE_DIR ?= $(dir $(realpath $(MAKEFILE)))
 
 # Path of the directory containing secondary makefiles.
-MAKE_DIR ?= $(MAKEFILE_DIR)/.make
+MAKE_DIR ?= $(MAKEFILE_DIR).make
 
 
 # ============================================================================ #
@@ -30,6 +30,8 @@ MAKE_DIR ?= $(MAKEFILE_DIR)/.make
 # -- Main Targets -- #
 
 .PHONY: all clean test
+
+all: help
 
 
 # =========================================================================== #
