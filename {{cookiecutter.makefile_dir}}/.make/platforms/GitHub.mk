@@ -18,9 +18,9 @@ GH_USER ?= $(shell whoami)
 # -- Source Code Control (SCM) -- #
 
 # GitHub API v3
-GH_DESCRIPTION ?= This is a mock project.
+GH_PROJECT_DESCRIPTION ?= This is a mock project.
 GH_LICENSE_TEMPLATE ?= mit
-GH_NAME ?= mock
+GH_REPO_NAME ?= mock
 GH_PRIVATE ?= true
 
 
@@ -31,14 +31,14 @@ GH_PRIVATE ?= true
 # -- Source Code Control (SCM) -- #
 
 # GitHub
-GH_REPO_PATH := $(GH_USER)/$(REPO_NAME)
+GH_REPO_PATH := $(GH_USER)/$(GH_REPO_NAME)
 GH_ORIGIN_URL := https://github.com/$(GH_REPO_PATH).git
 GH_RAW_URL := https://raw.githubusercontent.com/$(GH_REPO_PATH)/master/%7B%7Bcookiecutter.project_name%7D%7D
 
 # GitHub API v3
 GH_API_URL := https://api.github.com/user/repos
-GH_DATA := "name": "$(GH_NAME)"
-GH_DATA += , "description": "$(GH_DESCRIPTION)"
+GH_DATA := "name": "$(GH_REPO_NAME)"
+GH_DATA += , "description": "$(GH_PROJECT_DESCRIPTION)"
 GH_DATA += , "private": "$(GH_PRIVATE)"
 ifeq ($(GH_LICENSE_TEMPLATE),)
 GH_DATA += , "license_template": "$(GH_LICENSE_TEMPLATE)"
