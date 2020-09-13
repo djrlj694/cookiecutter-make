@@ -25,7 +25,7 @@ Cookiecutter Make supports the 3 major operating systems:
 
 To use Cookiecutter Make, the following software must first be installed on your system:
 
-* [Python](https://www.python.org/downloads/) 3.6, 3.7, 3.7, or PyPy3
+* [Python](https://www.python.org/downloads/) 3.6, 3.7, 3.8, or PyPy3
 * [Cookiecutter](https://github.com/audreyr/cookiecutter) Python package 1.7.2 or higher
 
 ### Installation
