@@ -3,7 +3,7 @@
 # PROGRAM: Makefile
 # AUTHORS: Robert (Bob) L. Jones
 # CREATED: 12SEP2020
-# REVISED: 12SEP2020
+# REVISED: 13SEP2020
 # =========================================================================== #
 
 
@@ -29,9 +29,15 @@ MAKE_DIR ?= $(MAKEFILE_DIR).make
 
 # -- Main Targets -- #
 
-.PHONY: all clean test
+.PHONY: all clean init test
 
 all: help
+
+## clean: Completes all cleaning activities.
+clean: clean-github
+
+## init: Completes all initial repo setup activities.
+init: init-github
 
 
 # =========================================================================== #
@@ -42,3 +48,10 @@ include $(MAKE_DIR)/features/formatting.mk
 
 include $(MAKE_DIR)/features/debugging.mk
 include $(MAKE_DIR)/features/helping.mk
+
+
+# ============================================================================ #
+# PLATFORM DEPENDENCIES
+# ============================================================================ #
+
+include $(MAKE_DIR)/platforms/GitHub.mk

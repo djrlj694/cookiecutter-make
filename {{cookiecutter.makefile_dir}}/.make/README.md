@@ -14,12 +14,13 @@ The sections that follow summarize the [makefiles](#files), style [conventions](
 
 Software projects with large, source code files are problematic. At best, they can be intimidating to developers, particularly to those who are new to a development team.  At worse, they become difficult to maintain, debug, or reuse. Makefile projects are no different in these respects.
 
-This makefile project is designed with modularity and maintainability in mind.  Following the [separation of concerns (SoC)](https://en.wikipedia.org/wiki/Separation_of_concerns) software design principle, it separates makefiles into 4 orthogonal areas of concern:
+This makefile project is designed with modularity and maintainability in mind.  Following the [separation of concerns (SoC)](https://en.wikipedia.org/wiki/Separation_of_concerns) software design principle, it separates makefiles into 3 orthogonal areas of concern:
 
 | Path | Concern | Intended Usage |
 | ---- | ------- | ----------- |
 | `$(MAKEFILE_DIR)/Makefile` | Customizations | Uniquely defining a software project |
 | `$(MAKEFILE_DIR)/.make/features/*` | Features | Adding feature capabilities to a makefile project |
+| `$(MAKEFILE_DIR)/.make/platforms/*` | Software platforms | Adding software platform/tool management capabilities for a software project |
 
 Makefiles stored under the appropriately named `.make` directory are makefile libraries, portable collections of variable definitions and target rules. They are distinguished from the top-level makefile, `Makefile`, in 2 respects:
 
@@ -28,7 +29,7 @@ Makefiles stored under the appropriately named `.make` directory are makefile li
 
 Makefile libraries may or may not be suffixed with `.mk`; the extension isn't a syntactic requirement for when the `make` command reads makefiles.  However, as a convention, extending makefile names with `.mk` is highly recommended and strongly encouraged.
 
-The subsections that follow focus on 2 makefile library groups: [*feature libraries*](#feature-libraries).
+The subsections that follow focus on 2 makefile library groups: [*feature libraries*](#feature-libraries) and [*platform libraries*](#platform-libraries).
 
 ### Feature Libraries
 
@@ -37,6 +38,12 @@ The subsections that follow focus on 2 makefile library groups: [*feature librar
 | [debugging.mk](features/debugging.mk) | Debugging makefile projects. |
 | [formatting.mk](features/formatting.mk) | Formatting standard output (STDOUT). |
 | [helping.mk](features/helping.mk) | Generating and displaying a makefile project's online help. |
+
+### Platform Libraries
+
+| File | Intended Usage |
+| ---- | ----------- |
+| [GitHub.mk](platforms/GitHub.mk) | Managing [GitHub](https://github.com) repositories. |
 
 ## Conventions
 
@@ -126,6 +133,8 @@ Two reasons to use a phony target are:
 An *intermediate target* corresponds to a file that is needed on the way from a source file to a target file.  It typically is a temporary file that is needed only once to generate the target after the source changed.  The `make` command automatically removes files that are identified as intermediate targets.  In other words, such files that didn't exist before a `make` run won't exist after a `make` run.
 
 #### Second Expansion Targets
+
+*TBD*
 
 ## References
 
