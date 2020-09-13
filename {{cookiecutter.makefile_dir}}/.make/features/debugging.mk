@@ -15,7 +15,7 @@
 
 # A list of makefile variables to show when testing/debugging.
 VARIABLES_TO_SHOW := MAKE_DIR MAKEFILE MAKEFILE_DIR MAKEFILE_LIST
-VARIABLES_TO_SHOW += PREFIX PWD REPO_NAME USER
+VARIABLES_TO_SHOW += PWD
 
 # -- Filesystem -- #
 
